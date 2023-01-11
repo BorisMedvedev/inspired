@@ -1,0 +1,31 @@
+.header {
+	padding: 16px 0;
+	&__container {
+		margin-bottom: 36px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&__phone {
+		@media (max-width: 480px) {
+			display: none;
+		}
+	}
+	&__nav-list {
+		display: flex;
+		gap: 24px;
+		@media (max-width: 480px) {
+			gap: 16px;
+		}
+	}
+}
+.logo {
+	&__img {
+		@media (max-width: 768px) {
+			width: 154px;
+		}
+		@media (max-width: 560px) {
+			width: 124px;
+		}
+	}
+}

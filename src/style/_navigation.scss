@@ -1,0 +1,19 @@
+.navigation {
+	&__gender {
+		display: flex;
+	}
+	&__gender-item {
+		flex-basis: 50%;
+	}
+	&__gender-link {
+		padding-bottom: 11px;
+		display: block;
+		text-align: center;
+		font-size: 18px;
+		text-transform: uppercase;
+		border-bottom: 1px solid $alto;
+	}
+	&__gender-link--active {
+		border-color: $black;
+	}
+}
