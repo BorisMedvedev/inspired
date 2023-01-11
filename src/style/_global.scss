@@ -35,4 +35,22 @@ svg {
 	max-width: 1210px;
 	padding: 0 15px;
 	margin: 0 auto;
+	@media (max-width: 768px) {
+		max-width: 620px;
+	}
+}
+
+.link-hover {
+	transition: color 0.3s ease-in-out;
+	&:hover {
+		color: $gray;
+	}
+}
+
+.title {
+	margin: 0;
+	font-weight: 400;
+	font-size: 32px;
+	text-align: center;
+	text-transform: uppercase;
 }

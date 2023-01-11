@@ -15,5 +15,6 @@
 	}
 	&__gender-link--active {
 		border-color: $black;
+		pointer-events: none;
 	}
 }
