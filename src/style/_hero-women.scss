@@ -1,70 +1,71 @@
 .hero-women {
-	margin-bottom: 80px;
-	padding: 173px 0 98px;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	background-image: url("../img/banner1920.jpg");
-	@media (max-width: 768px) {
-		padding: 156px 0 50px;
-		background-image: url("../img/banner768.jpg");
-	}
-	@media (max-width: 440px) {
-		padding: 76px 0 24px;
-		background-image: url("../img/banner320.jpg");
-	}
+  margin-bottom: 80px;
+  padding: 173px 0 98px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../img/banner1920.jpg");
+  @media (max-width: 768px) {
+    padding: 156px 0 50px;
+    background-image: url("../img/banner768.jpg");
+  }
+  @media (max-width: 440px) {
+    margin-bottom: 24px;
+    padding: 76px 0 24px;
+    background-image: url("../img/banner320.jpg");
+  }
 }
 
 .hero-men {
-	margin-bottom: 80px;
-	padding: 173px 0 98px;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	background-image: url("../img/men-banner1920.jpg");
+  margin-bottom: 80px;
+  padding: 173px 0 98px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../img/men-banner1920.jpg");
 }
 
 .hero {
-	&__title {
-		margin: 0;
-		margin-bottom: 52px;
-		max-width: 597px;
-		font-size: 44px;
-		font-weight: 400;
-		line-height: 1.2;
-		text-transform: uppercase;
-		color: $white;
-		@media (max-width: 768px) {
-			max-width: 400px;
-			font-size: 30px;
-			margin-bottom: 24px;
-		}
-		@media (max-width: 440px) {
-			margin-bottom: 16px;
-			max-width: 290px;
-			font-size: 20px;
-		}
-	}
-	&__link {
-		padding: 14px 40px;
-		border: 1px solid $white;
-		text-transform: uppercase;
-		background-color: transparent;
-		color: $white;
-		transition: background-color 0.3s, border 0.3s;
-		&:hover {
-			text-transform: uppercase;
-			background-color: $gray;
-		}
-		&:active {
-			text-transform: uppercase;
-			background-color: $tundora;
-		}
-		@media (max-width: 440px) {
-			display: inline-block;
-			margin-bottom: 24px;
-			padding: 12px 40px;
-			font-size: 12px;
-		}
-	}
+  &__title {
+    margin: 0;
+    margin-bottom: 52px;
+    max-width: 597px;
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: $white;
+    @media (max-width: 768px) {
+      max-width: 400px;
+      font-size: 30px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 440px) {
+      margin-bottom: 16px;
+      max-width: 290px;
+      font-size: 20px;
+    }
+  }
+  &__link {
+    padding: 14px 40px;
+    border: 1px solid $white;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: $white;
+    transition: background-color 0.3s, border 0.3s;
+    &:hover {
+      text-transform: uppercase;
+      background-color: $gray;
+    }
+    &:active {
+      text-transform: uppercase;
+      background-color: $tundora;
+    }
+    @media (max-width: 440px) {
+      display: inline-block;
+      margin-bottom: 24px;
+      padding: 12px 40px;
+      font-size: 12px;
+    }
+  }
 }
