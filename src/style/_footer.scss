@@ -1,19 +1,23 @@
 .footer {
   padding-bottom: 24px;
+
   &__wrapper {
     padding-top: 50px;
     border-top: 1px solid $alto;
     display: flex;
     justify-content: space-between;
+
     @media (max-width: 640px) {
       flex-wrap: wrap;
     }
   }
+
   &__inner {
     padding-top: 26px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+
     @media (max-width: 440px) {
       flex-direction: column;
       flex-wrap: wrap-reverse;
@@ -24,6 +28,7 @@
 .footer-category {
   &__list {
     display: flex;
+
     @media (max-width: 768px) {
       flex-direction: column;
     }
@@ -44,10 +49,12 @@
     margin-bottom: 10px;
     font-weight: 600;
     font-size: 14px;
+
     @media (max-width: 768px) {
       font-size: 12px;
     }
   }
+
   &__sublist {
     @media (max-width: 768px) {
       display: none;
@@ -61,6 +68,7 @@
   font-weight: 400;
   font-size: 18px;
   text-transform: uppercase;
+
   @media (max-width: 768px) {
     font-size: 16px;
   }
@@ -70,12 +78,15 @@
   display: flex;
   flex-direction: column;
   font-size: 18px;
+
   &__mail {
     margin-bottom: 16px;
+
     @media (max-width: 640px) {
       margin-bottom: 9px;
     }
   }
+
   @media (max-width: 640px) {
     font-size: 12px;
   }
@@ -83,30 +94,38 @@
 
 .footer-social {
   margin-right: 80px;
+
   @media (max-width: 640px) {
     margin-right: 0;
   }
+
   &__title {
     margin-bottom: 16px;
+
     @media (max-width: 440px) {
       margin-bottom: 10px;
     }
   }
+
   &__subtitle {
     margin: 0;
     margin-bottom: 10px;
     font-weight: 400;
     font-size: 14px;
+
     @media (max-width: 768px) {
       font-size: 12px;
     }
   }
+
   &__list {
     display: flex;
+
     @media (max-width: 640px) {
       margin-bottom: 10px;
     }
   }
+
   &__item:not(:last-child) {
     margin-right: 10px;
   }
@@ -117,12 +136,15 @@
     margin: 0;
     font-size: 12px;
   }
+
   @media (max-width: 40px) {
     order: 1;
   }
 }
+
 .footer-development {
   font-size: 12px;
+
   @media (max-width: 440px) {
     margin-bottom: 10px;
   }
