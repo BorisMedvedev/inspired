@@ -1,75 +1,93 @@
 import { dataNavigation } from "../../dataNavigation";
 import { createElement } from "../createElement";
 
-export const renderNavigaton = () => {
-  const navigation = document.querySelector(".navigation");
+export const renderNavigaton = (gender) => {
+	const navigation = document.querySelector(".navigation");
 
-  navigation.innerHTML = "";
+	navigation.innerHTML = "";
 
-  const container = createElement(
-    "div",
-    {
-      className: "container navigation__container",
-    },
-    {
-      parent: navigation,
-    }
-  );
+	const container = createElement(
+		"div",
+		{
+			className: "container navigation__container",
+		},
+		{
+			parent: navigation,
+		}
+	);
 
-  const gender = createElement(
-    "ul",
-    {
-      className: "navigation__gender gender list-reset",
-    },
-    {
-      parent: container,
-    }
-  );
+	const genderList = createElement(
+		"ul",
+		{
+			className: "navigation__gender gender list-reset",
+		},
+		{
+			parent: container,
+		}
+	);
 
-  for (const genderName in dataNavigation) {
-  }
+	for (const genderName in dataNavigation) {
+		createElement(
+			"a",
+			{
+				className: `navigation__gender-link link-hover
+			${gender === genderName ? "navigation__gender-link--active" : ""}`,
+				href: `#/${genderName}`,
+				textContent: dataNavigation[genderName].title,
+			},
+			{
+				parent: createElement(
+					"li",
+					{
+						className: "navigation__gender-item",
+					},
+					{
+						parent: genderList,
+					}
+				),
+			}
+		);
+	}
 
-  const category = createElement(
-    "ul",
-    {
-      className: "navigation__category category list-reset",
-    },
-    {
-      parent: container,
-    }
-  );
+	const categoryElems = dataNavigation[gender].list.map((item) =>
+		createElement(
+			"li",
+			{
+				className: "category__item",
+			},
+			{
+				append: createElement(
+					"a",
+					{
+						className: "category__link link-hover",
+						textContent: item.title,
+						href: `#/${gender}/${item.slug}`,
+					},
+					{
+						cb(elem) {
+							elem.addEventListener("click", () => {
+								console.log("elem: ", elem);
+								document
+									.querySelector(".category__link--active")
+									?.classList.remove("category__link--active");
 
-  navigation.innerHTML = `
-			<div class="container navigation__container">
-				<ul class="navigation__gender gender list-reset">
-					<li class="navigation__gender-item">
-						<a class="navigation__gender-link link-hover navigation__gender-link--active" href="#">Женщины</a>
-					</li>
-					<li class="navigation__gender-item">
-						<a class="navigation__gender-link link-hover" href="#">Мужчины</a>
-					</li>
-				</ul>
+								elem.classList.add("category__link--active");
+							});
+						},
+					}
+				),
+			}
+		)
+	);
 
-				<ul class="navigation__category category list-reset">
-					<li class="category__item">
-						<a class="category__link category__link--active link-hover" href="#">Бюстгальтеры</a>
-					</li>
-					<li class="category__item">
-						<a class="category__link link-hover" href="#">Трусы</a>
-					</li>
-					<li class="category__item">
-						<a class="category__link link-hover" href="#">Носки</a>
-					</li>
-					<li class="category__item">
-						<a class="category__link link-hover" href="#">Халаты</a>
-					</li>
-					<li class="category__item">
-						<a class="category__link link-hover" href="#">Термобелье</a>
-					</li>
-					<li class="category__item">
-						<a class="category__link link-hover" href="#">Пижамы</a>
-					</li>
-				</ul>
-			</div>
-	`;
+	createElement(
+		"ul",
+		{
+			className: "navigation__category category list-reset",
+		},
+		{
+			parent: container,
+			appends: categoryElems,
+		}
+	);
 };
