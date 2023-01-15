@@ -1,4 +1,4 @@
-export const renderHero = (cancel, gender) => {
+export const renderHero = (gender) => {
 	const hero = document.querySelector(".hero");
 
 	if (!gender) {
@@ -9,12 +9,24 @@ export const renderHero = (cancel, gender) => {
 	hero.style.display = "";
 	hero.className = `hero hero-${gender}`;
 
-	hero.innerHTML = `
-		<div class="container">
-			<div class="hero__content">
-				<h2 class="hero__title">Новая коллекция Бюстгальтер-балконет</h2>
-				<a class="hero__link" href="#">Перейти</a>
+	if (gender === "women") {
+		hero.innerHTML = `
+			<div class="container">
+				<div class="hero__content">
+					<h2 class="hero__title">Новая коллекция Бюстгальтер-балконет</h2>
+					<a class="hero__link" href="#">Перейти</a>
+				</div>
 			</div>
-		</div>
-	`;
+		`;
+	}
+	if (gender === "men") {
+		hero.innerHTML = `
+			<div class="container">
+				<div class="hero__content">
+					<h2 class="hero__title">Новая мужская коллекция</h2>
+					<a class="hero__link" href="#">Перейти</a>
+				</div>
+			</div>
+		`;
+	}
 };

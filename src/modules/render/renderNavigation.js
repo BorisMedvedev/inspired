@@ -1,10 +1,10 @@
-import { dataNavigation } from "../../dataNavigation";
+import { dataNavigation } from "../dataNavigation";
 import { createElement } from "../createElement";
 
 export const renderNavigaton = (gender) => {
 	const navigation = document.querySelector(".navigation");
 
-	navigation.innerHTML = "";
+	navigation.textContent = "";
 
 	const container = createElement(
 		"div",
