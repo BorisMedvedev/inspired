@@ -1,7 +1,45 @@
-export const renderNavigaton = () => {
-	const navigation = document.querySelector(".navigation");
+import { dataNavigation } from "../../dataNavigation";
+import { createElement } from "../createElement";
 
-	navigation.innerHTML = `
+export const renderNavigaton = () => {
+  const navigation = document.querySelector(".navigation");
+
+  navigation.innerHTML = "";
+
+  const container = createElement(
+    "div",
+    {
+      className: "container navigation__container",
+    },
+    {
+      parent: navigation,
+    }
+  );
+
+  const gender = createElement(
+    "ul",
+    {
+      className: "navigation__gender gender list-reset",
+    },
+    {
+      parent: container,
+    }
+  );
+
+  for (const genderName in dataNavigation) {
+  }
+
+  const category = createElement(
+    "ul",
+    {
+      className: "navigation__category category list-reset",
+    },
+    {
+      parent: container,
+    }
+  );
+
+  navigation.innerHTML = `
 			<div class="container navigation__container">
 				<ul class="navigation__gender gender list-reset">
 					<li class="navigation__gender-item">

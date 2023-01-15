@@ -9,20 +9,20 @@ import { womenMainPage } from "./modules/mainPage/womenMainPage";
 import { menMainPage } from "./modules/mainPage/menMainPage";
 
 router.on("*", () => {
-	renderHeader();
-	renderFooter();
+  renderHeader();
+  renderFooter();
 });
 
 router.on("/", () => {
-	mainPage();
+  mainPage();
 });
 
 router.on("women", () => {
-	womenMainPage();
+  womenMainPage();
 });
 
 router.on("men", () => {
-	menMainPage();
+  menMainPage();
 });
 
 // setTimeout(() => {
