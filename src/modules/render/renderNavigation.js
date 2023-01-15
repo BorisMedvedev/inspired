@@ -66,7 +66,6 @@ export const renderNavigaton = (gender) => {
 					{
 						cb(elem) {
 							elem.addEventListener("click", () => {
-								console.log("elem: ", elem);
 								document
 									.querySelector(".category__link--active")
 									?.classList.remove("category__link--active");
@@ -79,6 +78,7 @@ export const renderNavigaton = (gender) => {
 			}
 		)
 	);
+	console.log("jzhfsdjghsdjghsdjgbsdjghsdjghsdughs");
 
 	createElement(
 		"ul",

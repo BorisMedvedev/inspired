@@ -14,7 +14,6 @@ const init = async () => {
 		gender: "men",
 		category: "bathrobes",
 	});
-	console.log(data);
 };
 
 init();
