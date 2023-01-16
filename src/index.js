@@ -10,29 +10,29 @@ import { menMainPage } from "./modules/mainPage/menMainPage";
 import { getData } from "./modules/getData";
 
 const init = async () => {
-	const data = await getData("http://localhost:8024/api/goods", {
-		gender: "men",
-		category: "bathrobes",
-	});
+  const data = await getData("http://localhost:8024/api/goods", {
+    count: 5,
+  });
+  console.log(data);
 };
 
 init();
 
 router.on("*", () => {
-	renderHeader();
-	renderFooter();
+  renderHeader();
+  renderFooter();
 });
 
 router.on("/", () => {
-	mainPage();
+  mainPage();
 });
 
 router.on("women", () => {
-	womenMainPage();
+  womenMainPage();
 });
 
 router.on("men", () => {
-	menMainPage();
+  menMainPage();
 });
 
 router.resolve();
