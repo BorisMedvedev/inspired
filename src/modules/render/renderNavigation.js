@@ -64,13 +64,14 @@ export const renderNavigaton = (gender) => {
             href: `#/${gender}/${item.slug}`,
           },
           {
-            cb(elem) {
-              elem.addEventListener("click", () => {
+            cb(element) {
+              element.addEventListener("click", () => {
+                console.log("categoryElems ");
                 document
                   .querySelector(".category__link--active")
                   ?.classList.remove("category__link--active");
 
-                elem.classList.add("category__link--active");
+                element.classList.add("category__link--active");
               });
             },
           }
