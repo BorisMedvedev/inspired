@@ -10,41 +10,29 @@ import { menMainPage } from "./modules/mainPage/menMainPage";
 import { getData } from "./modules/getData";
 
 const init = async () => {
-  const data = await getData("http://localhost:8024/api/goods", {
-    count: 5,
-  });
-  console.log(data);
+	const data = await getData("http://localhost:8024/api/goods", {
+		count: 5,
+	});
+	console.log(data);
 };
 
 init();
 
 router.on("*", () => {
-  renderHeader();
-  renderFooter();
+	renderHeader();
+	renderFooter();
 });
 
 router.on("/", () => {
-  mainPage();
+	mainPage();
 });
 
 router.on("women", () => {
-  womenMainPage();
+	womenMainPage();
 });
 
 router.on("men", () => {
-  menMainPage();
+	menMainPage();
 });
 
 router.resolve();
-
-const btnLink = document.querySelectorAll(".category__link");
-
-btnLink.forEach((item) => {
-  item.addEventListener("click", () => {
-    document
-      .querySelector(".category__link--active")
-      ?.classList.remove("category__link--active");
-
-    item.classList.add("category__link--active");
-  });
-});
