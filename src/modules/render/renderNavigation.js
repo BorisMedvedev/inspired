@@ -56,26 +56,11 @@ export const renderNavigaton = (gender) => {
         className: "category__item",
       },
       {
-        append: createElement(
-          "a",
-          {
-            className: "category__link link-hover",
-            textContent: item.title,
-            href: `#/${gender}/${item.slug}`,
-          },
-          {
-            cb(element) {
-              element.addEventListener("click", () => {
-                console.log("categoryElems ");
-                document
-                  .querySelector(".category__link--active")
-                  ?.classList.remove("category__link--active");
-
-                element.classList.add("category__link--active");
-              });
-            },
-          }
-        ),
+        append: createElement("a", {
+          className: "category__link link-hover",
+          textContent: item.title,
+          href: `#/${gender}/${item.slug}`,
+        }),
       }
     )
   );

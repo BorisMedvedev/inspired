@@ -36,3 +36,15 @@ router.on("men", () => {
 });
 
 router.resolve();
+
+const btnLink = document.querySelectorAll(".category__link");
+
+btnLink.forEach((item) => {
+  item.addEventListener("click", () => {
+    document
+      .querySelector(".category__link--active")
+      ?.classList.remove("category__link--active");
+
+    item.classList.add("category__link--active");
+  });
+});
