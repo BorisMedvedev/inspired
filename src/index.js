@@ -4,7 +4,7 @@ import "./index.scss";
 import { router } from "./modules/router";
 import { mainPage } from "./modules/mainPage/mainPage";
 import { renderFooter } from "./modules/render/renderFooter";
-import { renderHeader } from "./modules/render/renderHeader";
+import { renderHeader, test } from "./modules/render/renderHeader";
 import { womenMainPage } from "./modules/mainPage/womenMainPage";
 import { menMainPage } from "./modules/mainPage/menMainPage";
 import { getData } from "./modules/getData";
