@@ -1,4 +1,5 @@
-import { dataNavigation } from "../dataNavigation";
+
+import { DATA } from '../const';
 import { createElement } from "../createElement";
 
 export const renderNavigaton = (gender) => {
@@ -26,14 +27,14 @@ export const renderNavigaton = (gender) => {
 		}
 	);
 
-	for (const genderName in dataNavigation) {
+	for (const genderName in DATA.navigation) {
 		createElement(
 			"a",
 			{
 				className: `navigation__gender-link link-hover
 			${gender === genderName ? "navigation__gender-link--active" : ""}`,
 				href: `#/${genderName}`,
-				textContent: dataNavigation[genderName].title,
+				textContent: DATA.navigation[genderName].title,
 			},
 			{
 				parent: createElement(
@@ -49,7 +50,7 @@ export const renderNavigaton = (gender) => {
 		);
 	}
 
-	const categoryElems = dataNavigation[gender].list.map((item) =>
+	const categoryElems = DATA.navigation[gender].list.map((item) =>
 		createElement(
 			"li",
 			{

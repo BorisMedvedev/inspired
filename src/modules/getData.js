@@ -1,4 +1,4 @@
-export const getData = async (urlApi, param, cbError = () => {}) => {
+export const getData = async (urlApi, param, cbError = () => { }) => {
   try {
     const url = new URL(urlApi);
 
@@ -10,11 +10,11 @@ export const getData = async (urlApi, param, cbError = () => {}) => {
 
     const response = await fetch(url);
 
+    const data = await response.json();
     if (!response.ok) {
-      throw new Error(response.statusText);
+      throw new Error(data.message);
     }
 
-    const data = await response.json();
 
     return data;
   } catch (err) {

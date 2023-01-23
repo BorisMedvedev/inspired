@@ -8,29 +8,31 @@ import { renderHeader, test } from "./modules/render/renderHeader";
 import { womenMainPage } from "./modules/mainPage/womenMainPage";
 import { menMainPage } from "./modules/mainPage/menMainPage";
 import { getData } from "./modules/getData";
+import { API_URL, DATA } from './modules/const';
 
 const init = async () => {
-	const data = await getData("http://localhost:8024/api/goods");
-	console.log(data);
+	DATA.navigation = await getData(`${API_URL}/api/categories`);
+	router.on("*", () => {
+		renderHeader();
+		renderFooter();
+	});
+
+	router.on("/", () => {
+		mainPage();
+	});
+
+	router.on("women", () => {
+		womenMainPage();
+	});
+
+	router.on("men", () => {
+		menMainPage();
+	});
+
+	router.resolve();
+
+
 };
 
 init();
 
-router.on("*", () => {
-	renderHeader();
-	renderFooter();
-});
-
-router.on("/", () => {
-	mainPage();
-});
-
-router.on("women", () => {
-	womenMainPage();
-});
-
-router.on("men", () => {
-	menMainPage();
-});
-
-router.resolve();
