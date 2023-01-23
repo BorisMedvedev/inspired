@@ -19,14 +19,5 @@ export const renderHero = (gender) => {
 			</div>
 		`;
 	}
-	if (gender === "men") {
-		hero.innerHTML = `
-			<div class="container">
-				<div class="hero__content">
-					<h2 class="hero__title">Новая мужская коллекция</h2>
-					<a class="hero__link" href="#">Перейти</a>
-				</div>
-			</div>
-		`;
-	}
+
 };

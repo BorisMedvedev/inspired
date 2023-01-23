@@ -10,9 +10,7 @@ import { menMainPage } from "./modules/mainPage/menMainPage";
 import { getData } from "./modules/getData";
 
 const init = async () => {
-	const data = await getData("http://localhost:8024/api/goods", {
-		count: 5,
-	});
+	const data = await getData("http://localhost:8024/api/goods");
 	console.log(data);
 };
 
